@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCKG Study Center — Second Home for the Better Future</title>
+  <meta name="description" content="Study Center Karunia Guru — pusat belajar gratis untuk siswa yang ingin mencapai prestasi terbaik bersama teman-teman mereka." />
+  <link rel="icon" type="image/png" href="images/logo-sc.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" onclick="showPage('home'); return false;">
+        <img src="images/logo-sc.png" alt="SCKG Study Center Logo" class="logo-img" />
+        <span class="logo-text">SCKG</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" class="nav-link active" data-page="home" onclick="showPage('home'); return false;">Beranda</a></li>
+        <li><a href="#" class="nav-link" data-page="about" onclick="showPage('about'); return false;">Tentang</a></li>
+        <li><a href="#" class="nav-link" data-page="kelas" onclick="showPage('kelas'); return false;">Kelas</a></li>
+        <li><a href="#" class="nav-link" data-page="faq" onclick="showPage('faq'); return false;">FAQ</a></li>
+        <li><a href="#" class="nav-link btn-nav-login" data-page="login" onclick="showPage('login'); return false;">Login Dashboard SC</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HOME PAGE ===== -->
+  <section class="page active" id="page-home">
+
+    <!-- Hero -->
+    <div class="absolute inset-0">
+        <img src="images/sckg-bg.JPG" alt="SCKG Background" class="sckg-bg w-full h-full object-cover"b/>
+        <div class=""absolute inset-0 bg-gradient-to-r from-ivory via-ivory/80 to-ivory/20"></div>
+        <div class=""absolute inset-0 bg-gradient-to-t from-ivory via-transparent to-ivory/30"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Second Home for the Better Future</p>
+        <h1 class="hero-title">Belajar Lebih Baik,<br />Bersama-sama</h1>
+        <p class="hero-subtitle">Study Center hadir untuk setiap siswa yang ingin berprestasi setara, tanpa hambatan biaya.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="showPage('about')">Selengkapnya</button>
+          <button class="btn btn-outline-white" onclick="showPage('login')">Login SC</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tiga Pilar -->
+    <section class="section bg-cream">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Nilai Kami</span>
+          <h2 class="section-title">Tiga Pilar SCKG</h2>
+          <p class="section-desc">Fondasi yang menopang setiap langkah pembelajaran di Study Center.</p>
+        </div>
+        
+          <div class="pillar-card">
+            <div class="pillar-icon">&#127807;</div>
+            <h3>Allah</h3>
+            <p>"Ingatlah akan Penciptamu pada masa mudamu..." - Pkh 12:1</p>
+          </div>        
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">&#128218;</div>
+            <h3>Pendidikan</h3>
+            <p>"Sebab Tuhan memberikan hikmat; dari mulut-Nya datang pengetahuan dan pengertian" - Ams. 2:6</p>
+          </div>
+          
+          <div class="pillar-card">
+            <div class="pillar-icon">&#129309;</div>
+            <h3>Karakter</h3>
+            <p>"Jadilah terladan bagi orang-orang percaya..." - 1 Tim. 4:12</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Tujuan -->
+    <section class="section bg-dark">
+      <div class="container">
+        <div class="tujuan-layout">
+          <div class="tujuan-text">
+            <span class="section-tag tag-light">Tujuan Kami</span>
+            <h2 class="section-title light">Mengapa Study Center Ada?</h2>
+            <p class="tujuan-desc">Banyak siswa berbakat yang tidak dapat mengikuti les privat karena keterbatasan biaya — sementara teman-teman mereka terus maju. SCKG hadir untuk menutup kesenjangan itu.</p>
+            <ul class="tujuan-list">
+              <li>Membantu siswa mencapai prestasi yang setara dengan teman sebayanya</li>
+              <li>Menyediakan bimbingan belajar gratis dan berkualitas</li>
+              <li>Membangun karakter, kedisiplinan, dan kepercayaan diri</li>
+              <li>Membentuk generasi muda yang tangguh dan berdaya saing</li>
+            </ul>
+            <button class="btn btn-primary" onclick="showPage('about')">Pelajari Lebih Lanjut</button>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Gratis</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Program Ekskul</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">SMP–SMA</span>
+              <span class="stat-label">Jenjang Kelas</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">&#8734;</span>
+              <span class="stat-label">Semangat Belajar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kelas Preview -->
+    <section class="section bg-cream">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Program Kami</span>
+          <h2 class="section-title">Kelas-Kelas SCKG</h2>
+          <p class="section-desc">Pilihan program yang dirancang untuk memenuhi kebutuhan akademik dan pengembangan diri siswa.</p>
+        </div>
+        <div class="kelas-preview-grid">
+          <div class="kelas-card kelas-ekskul">
+            <div class="kelas-badge badge-ekskul">Ekskul</div>
+            <h3>Program Ekstrakurikuler</h3>
+            <p class="kelas-subjects">Gitar &nbsp;&bull;&nbsp; Bahasa Inggris &nbsp;&bull;&nbsp; Coding</p>
+            <p class="kelas-desc">Kembangkan bakat dan keterampilan di luar akademik untuk masa depan yang lebih luas.</p>
+            <button class="btn btn-sm btn-outline-dark" onclick="showPage('kelas')">Lihat Detail</button>
+          </div>
+          <div class="kelas-card kelas-wajib">
+            <div class="kelas-badge badge-wajib">Wajib</div>
+            <h3>Mata Pelajaran Wajib</h3>
+            <p class="kelas-subjects">Matematika SMP &nbsp;&bull;&nbsp; Matematika SMA</p>
+            <p class="kelas-desc">Kuasai fondasi akademik yang kuat agar bisa bersaing dan berprestasi di sekolah.</p>
+            <button class="btn btn-sm btn-outline-dark" onclick="showPage('kelas')">Lihat Detail</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Login -->
+    <section class="section bg-cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Sudah Terdaftar di SCKG?</h2>
+          <p>Akses dashboard untuk absensi, jurnal belajar, dan informasi kelas kamu.</p>
+          <button class="btn btn-primary btn-lg" onclick="showPage('login')">Masuk ke Dashboard SC</button>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <!-- END HOME -->
+
+
+  <!-- ===== ABOUT PAGE ===== -->
+  <section class="page" id="page-about">
+
+    <div class="page-hero">
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="section-tag tag-light">Tentang Kami</span>
+        <h1>Mengenal Study Center<br />Kelapa Gading</h1>
+        <p>Rumah kedua bagi setiap pelajar yang ingin tumbuh dan berprestasi.</p>
+      </div>
+    </div>
+
+    <!-- Tujuan -->
+    <section class="section bg-cream">
+      <div class="container">
+        <div class="about-block">
+          <div class="about-icon-wrap">
+            <div class="about-big-icon">&#127919;</div>
+          </div>
+          <div class="about-text">
+            <span class="section-tag">Tujuan</span>
+            <h2 class="section-title">Tujuan Study Center</h2>
+            <p>SCKG Study Center didirikan dengan satu tujuan utama: memastikan setiap siswa — tanpa memandang latar belakang ekonomi — memiliki kesempatan yang sama untuk belajar, berkembang, dan berprestasi setara dengan teman-teman mereka.</p>
+            <p>Kami percaya bahwa keterbatasan finansial tidak seharusnya menjadi penghalang bagi mimpi seorang anak. Dengan menyediakan bimbingan belajar gratis, kami membantu menutup kesenjangan pendidikan dan membuka pintu kesempatan yang lebih luas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visi & Misi -->
+    <section class="section bg-dark">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag tag-light">Landasan Kami</span>
+          <h2 class="section-title light">Visi &amp; Misi</h2>
+        </div>
+        <div class="vm-grid">
+          <div class="visi-card">
+            <div class="vm-label">Visi</div>
+            <p>Menjadikan Study Center <br> sebagai rumah kedua dimana setiap remaja bisa mendapatkan sebuah komunitas yang sehat di luar rumah.</p>
+          </div>
+          <div class="vm-grid-card">
+            <div class="misi-card">
+            <div class="vm-label">Misi</div>
+            <p>Membentuk <br> sebuah komunitas remaja yang sehat, positif, dan prestasi ( berkaitan dengan pendidikan, karakter, dan ketaatan kepada Tuhan).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pendaftaran -->
+    <section class="section bg-cream" id="pendaftaran">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Bergabung</span>
+          <h2 class="section-title">Pendaftaran Peserta</h2>
+          <p class="section-desc">Ikuti langkah mudah berikut untuk bergabung dengan Study Center Kelapa Gading.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h4>Siapkan Persyaratan</h4>
+            <p>Fotokopi kartu pelajar atau rapor terakhir.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h4>Datang ke SCKG</h4>
+            <p>Kunjungi langsung gedung SCKG dan temui kakak pembina / admin yang siap membantu.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h4>Isi Formulir</h4>
+            <p>Lengkapi formulir pendaftaran yang disediakan dengan data diri dan informasi sekolah.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <h4>Mulai Belajar!</h4>
+            <p>Setelah terdaftar, kamu langsung bisa mengikuti kelas sesuai jadwal yang ditentukan.</p>
+          </div>
+        </div>
+        <div class="daftar-note">
+          <p>Pendaftaran <strong>gratis</strong> dan terbuka untuk semua siswa SMP dan SMA yang membutuhkan.</p>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <!-- END ABOUT -->
+
+
+  <!-- ===== KELAS PAGE ===== -->
+  <section class="page" id="page-kelas">
+
+    <div class="page-hero">
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="section-tag tag-light">Program Kami</span>
+        <h1>Kelas-Kelas<br />Study Center</h1>
+        <p>Dua program unggulan untuk pengembangan akademik dan diri.</p>
+      </div>
+    </div>
+
+    <!-- Ekskul -->
+    <section class="section bg-cream">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Program Pilihan</span>
+          <h2 class="section-title">Ekstrakurikuler</h2>
+          <p class="section-desc">Program pengembangan bakat dan keterampilan untuk memperluas wawasan dan kemampuan siswa.</p>
+        </div>
+        <div class="ekskul-grid">
+
+          <div class="ekskul-card">
+            <div class="ekskul-top">
+              <div class="ekskul-icon">&#127928;</div>
+              <div class="ekskul-tag-wrap">
+                <span class="badge-ekskul">Ekskul</span>
+                <h3>Gitar</h3>
+              </div>
+            </div>
+            <p>Belajar memainkan gitar dari dasar hingga mahir. Dirancang untuk semua tingkat — dari yang belum pernah memegang gitar hingga yang sudah memiliki dasar.</p>
+            <ul class="detail-list">
+              <li>Teknik dasar chord dan melodi</li>
+              <li>Membaca not balok dan tabulasi</li>
+              <li>Lagu-lagu populer dan klasik</li>
+              <li>Kepercayaan diri tampil di depan umum</li>
+            </ul>
+          </div>
+
+          <div class="ekskul-card">
+            <div class="ekskul-top">
+              <div class="ekskul-icon">&#127760;</div>
+              <div class="ekskul-tag-wrap">
+                <span class="badge-ekskul">Ekskul</span>
+                <h3>Bahasa Inggris</h3>
+              </div>
+            </div>
+            <p>Tingkatkan kemampuan Bahasa Inggris secara menyeluruh — dari percakapan sehari-hari hingga persiapan ujian. Program interaktif dan menyenangkan.</p>
+            <ul class="detail-list">
+              <li>Speaking &amp; Conversation</li>
+              <li>Reading &amp; Comprehension</li>
+              <li>Grammar &amp; Writing</li>
+              <li>Persiapan ujian sekolah &amp; nasional</li>
+            </ul>
+          </div>
+
+          <div class="ekskul-card">
+            <div class="ekskul-top">
+              <div class="ekskul-icon">&#128187;</div>
+              <div class="ekskul-tag-wrap">
+                <span class="badge-ekskul">Ekskul</span>
+                <h3>Coding</h3>
+              </div>
+            </div>
+            <p>Pelajari dunia pemrograman dari nol. Di era digital ini, kemampuan coding adalah keterampilan masa depan yang wajib dikuasai.</p>
+            <ul class="detail-list">
+              <li>Dasar logika pemrograman</li>
+              <li>HTML, CSS, &amp; JavaScript</li>
+              <li>Pengenalan Python</li>
+              <li>Proyek mini dan portofolio sederhana</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Wajib -->
+    <section class="section bg-dark">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag tag-light">Program Akademik</span>
+          <h2 class="section-title light">Mata Pelajaran Wajib</h2>
+          <p class="section-desc light">Penguatan akademik di mata pelajaran kunci agar siswa percaya diri menghadapi ujian.</p>
+        </div>
+        <div class="wajib-grid">
+
+          <div class="wajib-card">
+            <div class="wajib-header">
+              <div class="wajib-icon">&#128208;</div>
+              <span class="wajib-level">SMP</span>
+            </div>
+            <h3>Matematika SMP</h3>
+            <p>Pembelajaran Matematika untuk siswa SMP kelas 7–9. Materi disesuaikan dengan kurikulum nasional dan kebutuhan ujian.</p>
+            <div class="topic-tags">
+              <span>Aljabar</span><span>Geometri</span><span>Bilangan</span>
+              <span>Statistika</span><span>Persamaan</span><span>Fungsi</span>
+            </div>
+          </div>
+
+          <div class="wajib-card">
+            <div class="wajib-header">
+              <div class="wajib-icon">&#128207;</div>
+              <span class="wajib-level wajib-level-sma">SMA</span>
+            </div>
+            <h3>Matematika SMA</h3>
+            <p>Pembelajaran Matematika untuk siswa SMA kelas 10–12. Fokus pada pemahaman konsep mendalam dan persiapan ujian nasional serta UTBK.</p>
+            <div class="topic-tags">
+              <span>Turunan</span><span>Integral</span><span>Trigonometri</span>
+              <span>Vektor</span><span>Matriks</span><span>Statistik</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Tertarik Bergabung?</h2>
+          <p>Daftarkan dirimu sekarang dan mulailah perjalanan belajarmu bersama SCKG Study Center — gratis!</p>
+          <button class="btn btn-primary btn-lg" onclick="showPage('about'); setTimeout(() => { document.getElementById('pendaftaran').scrollIntoView({behavior:'smooth'}); }, 100);">Cara Mendaftar</button>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <!-- END KELAS -->
+
+
+  <!-- ===== LOGIN PAGE ===== -->
+  <section class="page" id="page-login">
+    <div class="login-wrapper">
+      <div class="login-left">
+        <img src="images/logo-sc.png" alt="SCKG Study Center" class="login-logo" />
+        <h2>Second Home for the<br />Better Future</h2>
+        <p>Portal khusus untuk anggota Study Center Karunia Guru.</p>
+        <div class="login-features">
+          <div class="login-feature-item">
+            <span class="feat-icon">&#128203;</span>
+            <span>Cek absensi &amp; kehadiran</span>
+          </div>
+          <div class="login-feature-item">
+            <span class="feat-icon">&#128211;</span>
+            <span>Jurnal belajar harian</span>
+          </div>
+          <div class="login-feature-item">
+            <span class="feat-icon">&#128197;</span>
+            <span>Jadwal &amp; informasi kelas</span>
+          </div>
+          <div class="login-feature-item">
+            <span class="feat-icon">&#127942;</span>
+            <span>Perkembangan &amp; progress belajar</span>
+          </div>
+        </div>
+      </div>
+      <div class="login-right">
+        <div class="login-card">
+          <h3>Login ke Study Center</h3>
+          <p class="login-subtitle">Klik tombol di bawah untuk mengakses dashboard SCKG kamu.</p>
+          <div class="login-divider"></div>
+
+          <!--
+            =====================================================
+            EDIT DI SINI: Ganti "#" dengan link dashboard SCKG.
+            Contoh: href="https://dashboard.sckg.id"
+            =====================================================
+          -->
+          <a href="#" target="_blank" class="btn btn-primary btn-login-big">
+            &#128640; &nbsp; Masuk ke Dashboard SCKG
+          </a>
+
+          <p class="login-note">
+            Tombol ini akan mengarahkan kamu ke platform dashboard SCKG.<br />
+            Hubungi admin jika mengalami kendala akses.
+          </p>
+          <div class="login-divider"></div>
+          <p class="login-contact">
+            Belum terdaftar?
+            <a href="#" onclick="showPage('about'); setTimeout(() => { document.getElementById('pendaftaran').scrollIntoView({behavior:'smooth'}); }, 100); return false;">Daftar di sini</a>
+          </p>
+          <p class="login-contact">Butuh bantuan? Hubungi admin SCKG.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END LOGIN -->
+
+
+  <!-- ===== FAQ PAGE ===== -->
+  <section class="page" id="page-faq">
+
+    <div class="page-hero">
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="section-tag tag-light">Pertanyaan Umum</span>
+        <h1>FAQ</h1>
+        <p>Temukan jawaban atas pertanyaan yang paling sering ditanyakan.</p>
+      </div>
+    </div>
+
+    <section class="section bg-cream">
+      <div class="container container-narrow">
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Apakah Study Center benar-benar gratis?</span>
+              <span class="faq-arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Ya, 100% gratis! SCKG Study Center adalah lembaga nirlaba yang berkomitmen untuk menyediakan pendidikan berkualitas tanpa biaya apapun. Tidak ada biaya pendaftaran, biaya bulanan, maupun biaya tersembunyi lainnya.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Siapa saja yang bisa mendaftar ke SCKG?</span>
+              <span class="faq-arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+              <p>SCKG terbuka untuk semua siswa SMP dan SMA yang ingin meningkatkan prestasi belajarnya, terutama bagi mereka yang tidak memiliki akses ke bimbingan belajar berbayar. Pendaftaran langsung di kantor SCKG dan kuota terbatas.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Bagaimana cara mendaftar ke Study Center?</span>
+              <span class="faq-arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Cara mendaftar sangat mudah:</p>
+              <ol>
+                <li>Siapkan fotokopi kartu pelajar atau rapor terakhir.</li>
+                <li>Kunjungi kantor SCKG Study Center secara langsung.</li>
+                <li>Isi formulir pendaftaran yang disediakan oleh tim kami.</li>
+                <li>Setelah terdaftar, langsung ikuti kelas sesuai jadwal!</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Program apa saja yang tersedia di SCKG?</span>
+              <span class="faq-arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+              <p>SCKG menyediakan dua jenis program:</p>
+              <ul>
+                <li><strong>Ekstrakurikuler:</strong> Gitar, Bahasa Inggris, dan Coding.</li>
+                <li><strong>Mata Pelajaran Wajib:</strong> Matematika SMP (kelas 7–9) dan Matematika SMA (kelas 10–12).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Kapan jadwal belajar di Study Center?</span>
+              <span class="faq-arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Jadwal belajar disesuaikan dengan ketersediaan siswa dan pengajar. Biasanya kegiatan dilaksanakan pada sore hari setelah jam sekolah. Informasi jadwal lengkap diberikan setelah proses pendaftaran berhasil.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Apakah ada persyaratan nilai minimum untuk mendaftar?</span>
+              <span class="faq-arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Tidak ada persyaratan nilai minimum. SCKG menerima semua siswa yang memiliki semangat untuk belajar dan berkembang. Justru siswa yang kesulitan secara akademik sangat kami prioritaskan.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Bagaimana kualitas pengajar di SCKG?</span>
+              <span class="faq-arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Pengajar di SCKG adalah individu-individu berdedikasi dengan latar belakang pendidikan yang relevan dan passion untuk mengajar. Mereka diseleksi secara ketat dan berkomitmen memberikan pengajaran terbaik.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Apa itu Login SC dan untuk apa?</span>
+              <span class="faq-arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Login SC adalah portal online khusus untuk anggota SCKG yang sudah terdaftar. Melalui Login SC, siswa dapat mengakses absensi kehadiran, jurnal belajar harian, jadwal kelas, dan memantau perkembangan belajar mereka.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Bagaimana cara menghubungi SCKG?</span>
+              <span class="faq-arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+              <p>Kamu bisa menghubungi kami dengan datang langsung ke kantor SCKG Study Center. Tim kami siap membantu menjawab pertanyaan dan memberikan informasi yang kamu butuhkan.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="faq-cta">
+          <p>Masih punya pertanyaan lain? Jangan ragu untuk menghubungi kami langsung.</p>
+          <button class="btn btn-primary" onclick="showPage('about')">Lihat Info Pendaftaran</button>
+        </div>
+
+      </div>
+    </section>
+
+  </section>
+  <!-- END FAQ -->
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo-sc.png" alt="SCKG Study Center" class="footer-logo" />
+          <p>Study Center Kelapa Gading — <br> rumah kedua untuk masa depan <br> yang lebih baik.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#" onclick="showPage('home'); return false;">Beranda</a></li>
+            <li><a href="#" onclick="showPage('about'); return false;">Tentang</a></li>
+            <li><a href="#" onclick="showPage('kelas'); return false;">Kelas</a></li>
+            <li><a href="#" onclick="showPage('faq'); return false;">FAQ</a></li>
+            <li><a href="#" onclick="showPage('login'); return false;">Login SC</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Program</h4>
+          <ul>
+            <li><a href="#" onclick="showPage('kelas'); return false;">Ekskul</a></li>
+            <li><a href="#" onclick="showPage('kelas'); return false;">Kelas Wajib — MTK</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="#" onclick="showPage('about'); return false;">Visi &amp; Misi</a></li>
+            <li><a href="#" onclick="showPage('about'); setTimeout(() => { document.getElementById('pendaftaran').scrollIntoView({behavior:'smooth'}); }, 100); return false;">Pendaftaran</a></li>
+            <li><a href="#" onclick="showPage('faq'); return false;">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Study Center Kelapa Gading &mdash; <em>Second Home for the Better Future</em></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
