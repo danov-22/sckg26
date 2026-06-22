@@ -114,3 +114,15 @@ window.addEventListener("scroll", function() {
   img.style.transform =
     `translateY(${offset + window.scrollY * 0.12}px)`;
 });
+
+// Redirect to WhatsApp with a pre-filled custom message
+function redirectToWhatsApp() {
+    const phoneNumber = "6281234567890"; // <-- Change this to your real WhatsApp number
+    const message = encodeURIComponent("Halo Study Center, saya ingin bertanya mengenai program kelas.");
+    
+    // Generates the official click-to-chat URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Opens it safely in a brand new tab
+    window.open(whatsappUrl, '_blank');
+}

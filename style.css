@@ -1498,7 +1498,6 @@ gap:.9rem;
   /* Buttons */
   .btn-lg { padding: 0.9rem 1.75rem; }
   .cta-box .btn-lg { width: 100%; }
-}
 
 /* ===== SMOOTH TRANSITIONS ===== */
 .page {
@@ -1508,4 +1507,39 @@ gap:.9rem;
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== FLOATING WHATSAPP BUTTON ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: #FFF;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999; /* Keeps it on top of all other elements */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+}
+
+/* Hover Effect */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #20ba5a;
+}
+
+/* Adjust position slightly for smaller mobile devices so it doesn't block layout elements */
+@media (max-width: 767px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+  }
 }
