@@ -479,7 +479,7 @@
       <div class="page-hero-content">
         <span class="section-tag tag-light">Dokumentasi</span>
         <h1>Galeri Kegiatan<br />Study Center</h1>
-        <p>Melihat kembali momen belajar, keceriaan, dan pertumbuhan karakter siswa.</p>
+        <p>Melihat kembali momen belajar, pembinaan dan aktivitas lainnya.</p>
       </div>
     </div>
 
@@ -490,43 +490,10 @@
           <button class="filter-btn active" onclick="filterGallery('all')">Semua Momen</button>
           <button class="filter-btn" onclick="filterGallery('ekskul')">Ekstrakurikuler</button>          
           <button class="filter-btn" onclick="filterGallery('akademik')">Kelas Akademik</button>
-          <button class="filter-btn" onclick="filterGallery('karakter')">Pembinaan</button>
+          <button class="filter-btn" onclick="filterGallery('pembinaan')">Pembinaan</button>
         </div>
 
         <div class="gallery-grid">
-          
-          <div class="gallery-item ekskul">
-            <div class="gallery-card">
-              <img src="images/coding.jpg" alt="Kelas Coding SCKG">
-              <div class="gallery-info">
-                <span class="gallery-tag">Ekskul</span>
-                <h4>Belajar Pemrograman Dasar</h4>
-                <p>Siswa antusias memecahkan logika kode pertama mereka.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item akademik">
-            <div class="gallery-card">
-              <img src="images/kelas-SMA.JPG" alt="Kelas Matematika SMA">
-              <div class="gallery-info">
-                <span class="gallery-tag">Akademik</span>
-                <h4>Pendampingan Ujian Matematika</h4>
-                <p>Suasana belajar kelompok yang fokus namun tetap menyenangkan.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item karakter">
-            <div class="gallery-card">
-              <img src="images/pembinaan.JPEG" alt="Sesi Pembinaan Rohani">
-              <div class="gallery-info">
-                <span class="gallery-tag">Pembinaan</span>
-                <h4>Sesi Pembinaan Rohani</h4>
-                <p>Membentuk pribadi yang taat kepada Tuhan dan berdampak positif.</p>
-              </div>
-            </div>
-          </div>
 
           <div class="gallery-item ekskul">
             <div class="gallery-card">
@@ -550,6 +517,72 @@
             </div>
           </div>
 
+          <div class="gallery-item ekskul">
+            <div class="gallery-card">
+              <img src="images/coding.jpg" alt="Kelas Coding SCKG">
+              <div class="gallery-info">
+                <span class="gallery-tag">Ekskul</span>
+                <h4>Belajar Pemrograman Dasar</h4>
+                <p>Siswa antusias memecahkan logika kode pertama mereka.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item akademik">
+            <div class="gallery-card">
+              <img src="images/kelas-SMA.JPG" alt="Kelas Matematika SMA">
+              <div class="gallery-info">
+                <span class="gallery-tag">Akademik</span>
+                <h4>Kelas Matematika SMA</h4>
+                <p>Suasana belajar kelompok yang fokus namun tetap menyenangkan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item akademik">
+            <div class="gallery-card">
+              <img src="images/mtk.JPG" alt="Kelas Matematika SMA">
+              <div class="gallery-info">
+                <span class="gallery-tag">Akademik</span>
+                <h4>Kelas Matematika SMP</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item pembinaan">
+            <div class="gallery-card">
+              <img src="images/pembinaan.JPEG" alt="Sesi Pembinaan Rohani">
+              <div class="gallery-info">
+                <span class="gallery-tag">Pembinaan</span>
+                <h4>Sesi Pembinaan Rohani</h4>
+                <p>Membentuk pribadi yang taat kepada Tuhan dan berdampak positif.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item pembinaan">
+            <div class="gallery-card">
+              <img src="images/topik_belajar_jepang.jpeg" alt="Sesi Pembicara Khusus">
+              <div class="gallery-info">
+                <span class="gallery-tag">Pembinaan</span>
+                <h4>Sesi Pembicara Khusus</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item pembinaan">
+            <div class="gallery-card">
+              <video autoplay loop muted playsinline class=\"gallery-video">
+                <source src="images/seminar_gigi.mp4" type="video/mp4">
+              </video>
+              <div class="gallery-info">
+                <span class="gallery-tag">Seminar</span>
+                <h4>Kesehatan Gigi</h4>
+                <p>Mengadakan seminar dengan topik yang berbeda-beda tiap semester.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -557,8 +590,8 @@
     <section class="section bg-dark">
       <div class="container text-center">
         <div class="cta-box">
-          <h2 class="light">Ingin Menjadi Bagian dari Cerita Kami?</h2>
-          <p class="light" style="opacity: 0.85; margin-bottom: 2rem;">Pendaftaran siswa baru selalu terbuka tanpa dipungut biaya sepeser pun.</p>
+          <h2 class="light">Tertarik untuk bergabung?</h2>
+          <p class="light" style="opacity: 0.85; margin-bottom: 2rem;">Pendaftaran siswa baru selalu terbuka bagi yang sungguh-sungguh ingin berkembang.</p>
           <button class="btn btn-primary btn-lg" onclick="showPage('about'); setTimeout(() => { document.getElementById('pendaftaran').scrollIntoView({behavior:'smooth'}); }, 100);">Cara Mendaftar</button>
         </div>
       </div>
