@@ -737,6 +737,8 @@ gap:.9rem;
 .badge-ekskul,
 .badge-wajib {
   display: inline-block;
+  width: fit-content;
+  text-align: center;
   padding: 0.25rem 0.85rem;
   border-radius: 50px;
   font-size: 0.75rem;
@@ -744,6 +746,7 @@ gap:.9rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
+  white-space: nowrap;
 }
 
 .badge-ekskul {
@@ -1073,6 +1076,27 @@ gap:.9rem;
   height: 220px; 
   object-fit: cover;
   display: block;
+  cursor: zoom-in; 
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-video {
+  transform: scale(1.03); 
+}
+
+.lightbox-video {
+  display: none;
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.lightbox.show .lightbox-video {
+  display: block;
+  transform: scale(1);
 }
 
 .gallery-info {
@@ -1119,6 +1143,57 @@ gap:.9rem;
 
 .gallery-item.hide {
   display: none;
+}
+
+.zoomable-img { 
+  cursor: zoom-in; transition: transform 0.2s ease; 
+}
+
+.zoomable-img:hover { 
+  transform: scale(1.02); 
+}
+
+.lightbox { 
+  display: none; 
+  position: fixed; 
+  z-index: 10000; 
+  inset: 0; 
+  background-color: rgba(0, 0, 0, 0.85); 
+  backdrop-filter: blur(5px);
+  align-items: center; 
+  justify-content: center; 
+  cursor: zoom-out; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+}
+
+.lightbox.show { 
+  display: flex; 
+  opacity: 1; 
+}
+
+.lightbox-content { 
+  max-width: 90%; 
+  max-height: 85vh; 
+  object-fit: contain; 
+  border-radius: 8px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+  transform: scale(0.9); 
+  transition: transform 0.3s ease; 
+}
+
+.lightbox.show .lightbox-content { 
+  transform: scale(1); 
+}
+
+.lightbox-close { 
+  position: absolute; 
+  top: 20px; 
+  right: 30px; 
+  color: #fff; 
+  font-size: 40px; 
+  font-weight: bold; 
+  cursor: pointer; 
 }
 
 /* ===== WAJIB CARDS ===== */

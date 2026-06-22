@@ -105,36 +105,51 @@ document.addEventListener('click', function(e) {
   showPage('home');
 });
 
-/* ===== GALLERY FILTER LOGIC ===== */
-function filterGallery(category) {
-  // 1. Update status active pada tombol filter
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  filterButtons.forEach(btn => {
-    btn.classList.remove('active');
-  });
-  
-  // Mencari tombol yang memicu event secara dinamis
-  const clickedBtn = event.currentTarget;
-  if(clickedBtn) clickedBtn.classList.add('active');
+/* ===== LIGHTBOX GALlERY (ZOOM IMAGE & VIDEO) ===== */
 
-  // 2. Saring item galeri
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  
-  galleryItems.forEach(item => {
-    if (category === 'all') {
-      item.classList.remove('hide');
-    } else {
-      if (item.classList.contains(category)) {
-        item.classList.remove('hide');
-      } else {
-        item.classList.add('hide');
-      }
-    }
-  });
+function zoomImage(element) {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxVid = document.getElementById('lightboxVid');
+
+    if (lightboxVid) lightboxVid.style.display = 'none';
+    if (lightboxImg) lightboxImg.style.display = 'block';
+
+    lightboxImg.src = element.src;
+    lightboxImg.alt = element.alt;
+    lightbox.classList.add('show');
 }
 
-// Daftarkan fungsi ke objek window agar bisa diakses secara global oleh atribut onclick HTML
-window.filterGallery = filterGallery;
+function zoomVideo(element) {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxVid = document.getElementById('lightboxVid');
+    
+    // Ambil link video dari tag <source> di dalamnya
+    const videoSource = element.querySelector('source').src;
+
+    // Sembunyikan gambar, TAMPILKAN video
+    if (lightboxImg) lightboxImg.style.display = 'none';
+    if (lightboxVid) lightboxVid.style.display = 'block';
+    
+    lightboxVid.src = videoSource;
+    lightboxVid.load();
+    lightboxVid.play(); 
+
+    lightbox.classList.add('show');
+}
+
+function closeZoom() {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxVid = document.getElementById('lightboxVid');
+    
+    lightbox.classList.remove('show');
+    
+    if (lightboxVid) {
+        lightboxVid.pause();
+        lightboxVid.src = ""; 
+    }
+}
 
 /* ===== HERO PARALLAX EFFECT ===== */
 window.addEventListener("scroll", function() {
