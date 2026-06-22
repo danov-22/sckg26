@@ -160,6 +160,14 @@ p:last-child { margin-bottom: 0; }
   color: #1A9B7A;
 }
 
+@media (max-width:767px) {
+
+    .navbar.scrolled .nav-link {
+        color: #FAF7F2;
+    }
+
+}
+
 .nav-link:hover,
 .nav-link.active {
   color: #FAF7F2;
@@ -169,11 +177,13 @@ p:last-child { margin-bottom: 0; }
 .btn-nav-login {
   background: #1A9B7A;
   color: #FAF7F2 !important;
+  border: 2px solid rgba(255,255,255,0.35);
   font-weight: 600;
   padding: 0.5rem 1.1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-left: 0.5rem;
-  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  transition: all 0.25s ease;
 }
 
 .btn-nav-login:hover {
@@ -234,28 +244,52 @@ p:last-child { margin-bottom: 0; }
   box-shadow: 0 6px 20px rgba(26,155,122,0.3);
 }
 
-.btn-outline-white {
-  background: transparent;
+@media (max-width:767px){
+
+.btn-primary {
+  background: #2cb38c;
   color: #FAF7F2;
-  border-color: rgba(255,255,255,0.7);
+  border-color: #2cb38c;
+  box-shadow: 0 6px 20px rgba(51,196,154,0.35);
 }
+
+.btn-primary:hover {
+  background: #239c7a;
+  border-color: #239c7a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(51,196,154,0.45);
+}
+
+}
+
+.btn-outline-white {
+  background: rgba(255,255,255,0.08);
+  color: #FAF7F2;
+  border-color: rgba(255,255,255,0.75);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
 .btn-outline-white:hover {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.18);
   border-color: #FAF7F2;
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
 
 .btn-outline-dark {
-  background: transparent;
-  color: #0D3D2A;
+  background: rgba(26,155,122,0.06);
+  color: #1A9B7A;
   border-color: #1A9B7A;
-}
-.btn-outline-dark:hover {
-  background: #1A9B7A;
-  color: #FAF7F2;
-  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26,155,122,0.12);
 }
 
+.btn-outline-dark:hover {
+  background: #33C49A;
+  border-color: #33C49A;
+  color: #FAF7F2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(51,196,154,0.30);
+}
 .btn-sm {
   padding: 0.5rem 1.2rem;
   font-size: 0.85rem;
@@ -348,6 +382,9 @@ p:last-child { margin-bottom: 0; }
 
     object-position:52% 20%;
 
+    transform: transform 0.1s linear;
+    will-change: transform;
+
 }
 
 .hero-overlay {
@@ -369,20 +406,17 @@ p:last-child { margin-bottom: 0; }
     position:absolute;
     left:50%;
     bottom:8%;
-
     transform:translateX(-50%);
-
     z-index:2;
 
     width:min(90%,600px);
-
     text-align:center;
 
     background: rgba(22,138,109,.65);
-    
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    
+
     border: 1px solid rgba(255,255,255,.18);
 }
 
@@ -497,7 +531,7 @@ gap:.9rem;
 
     border-radius:18px;
 
-    padding:1rem 3rem;
+    padding: 2rem 3rem !important;
 
 }
 
@@ -508,11 +542,13 @@ gap:.9rem;
     z-index: 0;
 }
 
-.hero-bg img{
-  transform: translateY(-120px);
-
+.hero-bg img {
+    width:100%;
+    height:115%;
+    object-fit:cover;
+    object-position:52% 20%;
+    will-change: transform;
 }
-
 .hero-actions{
 
     flex-direction:column;
@@ -559,12 +595,15 @@ gap:.9rem;
 /* ===== THREE PILLARS ===== */
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .pillar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #fff;
   border: 1.5px solid rgba(26,155,122,0.15);
   border-radius: 14px;
