@@ -1526,6 +1526,9 @@ gap:.9rem;
   z-index: 9999; /* Keeps it on top of all other elements */
   cursor: pointer;
   transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
 }
 
 /* Hover Effect */

@@ -115,14 +115,88 @@ window.addEventListener("scroll", function() {
     `translateY(${offset + window.scrollY * 0.12}px)`;
 });
 
-// Redirect to WhatsApp with a pre-filled custom message
+
+/* ===== FLOATING DRAGGABLE WHATSAPP BUTTON LOGIC ====+ */
+
+// 1. WhatsApp Redirect Function (Triggered on Double Click)
 function redirectToWhatsApp() {
-    const phoneNumber = "6281234567890"; // <-- Change this to your real WhatsApp number
+    const phoneNumber = "6281234567890"; // <-- Ubah dengan nomor WhatsApp asli Anda
     const message = encodeURIComponent("Halo Study Center, saya ingin bertanya mengenai program kelas.");
-    
-    // Generates the official click-to-chat URL
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    
-    // Opens it safely in a brand new tab
     window.open(whatsappUrl, '_blank');
+}
+
+// 2. Draggable Logic for the Floating Button
+const dragElement = document.querySelector('.whatsapp-float');
+let isDragging = false;
+let startX, startY, initialX, initialY;
+
+if (dragElement) {
+    // Desktop Mouse Events
+    dragElement.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDrag);
+
+    // Mobile Touch Events
+    dragElement.addEventListener('touchstart', startDrag, { passive: false });
+    document.addEventListener('touchmove', drag, { passive: false });
+    document.addEventListener('touchend', stopDrag);
+}
+
+function startDrag(e) {
+    isDragging = true;
+    
+    // Cek apakah layar sentuh (mobile) atau klik mouse (desktop)
+    const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+    const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+    
+    startX = clientX;
+    startY = clientY;
+    
+    // Dapatkan posisi koordinat tombol saat ini
+    const rect = dragElement.getBoundingClientRect();
+    initialX = rect.left;
+    initialY = rect.top;
+    
+    // Matikan transisi CSS saat menyeret agar pergerakan tombol terasa responsif dan mulus
+    dragElement.style.transition = 'none';
+}
+
+function drag(e) {
+    if (!isDragging) return;
+    
+    // Mencegah layar ikut tergulung (scrolling) di mobile saat tombol diseret
+    if (e.cancelable) e.preventDefault();
+    
+    const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+    const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+    
+    // Hitung perubahan jarak geser
+    const dx = clientX - startX;
+    const dy = clientY - startY;
+    
+    let newX = initialX + dx;
+    let newY = initialY + dy;
+    
+    // Batasi tombol agar tidak keluar dari area layar browser jendelanya
+    const padding = 10;
+    const maxW = window.innerWidth - dragElement.offsetWidth - padding;
+    const maxH = window.innerHeight - dragElement.offsetHeight - padding;
+    
+    newX = Math.max(padding, Math.min(newX, maxW));
+    newY = Math.max(padding, Math.min(newY, maxH));
+    
+    // Ubah aturan penulisan style CSS dari bottom/right bawaan ke top/left koordinat dinamis
+    dragElement.style.right = 'auto';
+    dragElement.style.bottom = 'auto';
+    dragElement.style.left = `${newX}px`;
+    dragElement.style.top = `${newY}px`;
+}
+
+function stopDrag() {
+    if (!isDragging) return;
+    isDragging = false;
+    
+    // Kembalikan efek transisi hover CSS setelah selesai diseret
+    dragElement.style.transition = 'transform 0.2s ease-in-out, background-color 0.2s ease';
 }
