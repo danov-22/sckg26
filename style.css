@@ -156,6 +156,10 @@ p:last-child { margin-bottom: 0; }
   white-space: nowrap;
 }
 
+.navbar.scrolled .nav-link{
+  color: #1A9B7A;
+}
+
 .nav-link:hover,
 .nav-link.active {
   color: #FAF7F2;
