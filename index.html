@@ -27,6 +27,7 @@
         <li><a href="#" class="nav-link active" data-page="home" onclick="showPage('home'); return false;">Beranda</a></li>
         <li><a href="#" class="nav-link" data-page="about" onclick="showPage('about'); return false;">Tentang</a></li>
         <li><a href="#" class="nav-link" data-page="kelas" onclick="showPage('kelas'); return false;">Kelas</a></li>
+        <li><a href="#" class="nav-link" data-page="galeri" onclick="showPage('galeri'); return false;">Galeri</a></li>
         <li><a href="#" class="nav-link" data-page="faq" onclick="showPage('faq'); return false;">FAQ</a></li>
         <li><a href="https://sc.kantindigital.com/" class="nav-link btn-nav-login" target="_blank" rel="noopener noreferrer">Login Dashboard SCKG</a></li>
       </ul>
@@ -470,6 +471,100 @@
 
   </section>
   <!-- END KELAS -->
+
+<section class="page" id="page-galeri">
+
+    <div class="page-hero">
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="section-tag tag-light">Dokumentasi</span>
+        <h1>Galeri Kegiatan<br />Study Center</h1>
+        <p>Melihat kembali momen belajar, keceriaan, dan pertumbuhan karakter siswa.</p>
+      </div>
+    </div>
+
+    <section class="section bg-cream">
+      <div class="container">
+        
+        <div class="gallery-filters">
+          <button class="filter-btn active" onclick="filterGallery('all')">Semua Momen</button>
+          <button class="filter-btn" onclick="filterGallery('ekskul')">Ekstrakurikuler</button>          
+          <button class="filter-btn" onclick="filterGallery('akademik')">Kelas Akademik</button>
+          <button class="filter-btn" onclick="filterGallery('karakter')">Pembinaan</button>
+        </div>
+
+        <div class="gallery-grid">
+          
+          <div class="gallery-item ekskul">
+            <div class="gallery-card">
+              <img src="images/coding.jpg" alt="Kelas Coding SCKG">
+              <div class="gallery-info">
+                <span class="gallery-tag">Ekskul</span>
+                <h4>Belajar Pemrograman Dasar</h4>
+                <p>Siswa antusias memecahkan logika kode pertama mereka.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item akademik">
+            <div class="gallery-card">
+              <img src="images/kelas-SMA.JPG" alt="Kelas Matematika SMA">
+              <div class="gallery-info">
+                <span class="gallery-tag">Akademik</span>
+                <h4>Pendampingan Ujian Matematika</h4>
+                <p>Suasana belajar kelompok yang fokus namun tetap menyenangkan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item karakter">
+            <div class="gallery-card">
+              <img src="images/pembinaan.JPEG" alt="Sesi Pembinaan Rohani">
+              <div class="gallery-info">
+                <span class="gallery-tag">Pembinaan</span>
+                <h4>Sesi Pembinaan Rohani</h4>
+                <p>Membentuk pribadi yang taat kepada Tuhan dan berdampak positif.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item ekskul">
+            <div class="gallery-card">
+              <img src="images/kelas-gitar.JPG" alt="Kelas Gitar">
+              <div class="gallery-info">
+                <span class="gallery-tag">Ekskul</span>
+                <h4>Harmoni Kelas Musik</h4>
+                <p>Latihan teknik chord dasar untuk performa akhir semester.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item ekskul">
+            <div class="gallery-card">
+              <img src="images/english_intermediate.JPG" alt="Kelas Inggris">
+              <div class="gallery-info">
+                <span class="gallery-tag">Ekskul</span>
+                <h4>Bahasa Inggris</h4>
+                <p>Membangun lingkungan yang mendukung untuk lebih berani berbicara.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-dark">
+      <div class="container text-center">
+        <div class="cta-box">
+          <h2 class="light">Ingin Menjadi Bagian dari Cerita Kami?</h2>
+          <p class="light" style="opacity: 0.85; margin-bottom: 2rem;">Pendaftaran siswa baru selalu terbuka tanpa dipungut biaya sepeser pun.</p>
+          <button class="btn btn-primary btn-lg" onclick="showPage('about'); setTimeout(() => { document.getElementById('pendaftaran').scrollIntoView({behavior:'smooth'}); }, 100);">Cara Mendaftar</button>
+        </div>
+      </div>
+    </section>
+
+  </section>
 
   <!-- ===== FAQ PAGE ===== -->
   <section class="page" id="page-faq">

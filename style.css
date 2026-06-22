@@ -1013,6 +1013,107 @@ gap:.9rem;
   font-size: 0.8rem;
 }
 
+/* ===== GALLERY PAGE STYLES ===== */
+
+/* Filter Buttons */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #1A9B7A;
+  color: #083D2B;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #1A9B7A;
+  color: #FAF7F2;
+  box-shadow: 0 4px 12px rgba(26, 155, 122, 0.2);
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Gallery Card Structure */
+.gallery-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(8, 61, 43, 0.05);
+  border: 1px solid rgba(212, 197, 178, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-info {
+  padding: 1.5rem;
+}
+
+.gallery-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #1A9B7A;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-info h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: #083D2B;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-info p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Hover Animations */
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(8, 61, 43, 0.12);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Filter Hide/Show Animation Helper */
+.gallery-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-item.hide {
+  display: none;
+}
+
 /* ===== WAJIB CARDS ===== */
 .wajib-grid {
   display: grid;

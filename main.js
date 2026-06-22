@@ -105,6 +105,37 @@ document.addEventListener('click', function(e) {
   showPage('home');
 });
 
+/* ===== GALLERY FILTER LOGIC ===== */
+function filterGallery(category) {
+  // 1. Update status active pada tombol filter
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  filterButtons.forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  // Mencari tombol yang memicu event secara dinamis
+  const clickedBtn = event.currentTarget;
+  if(clickedBtn) clickedBtn.classList.add('active');
+
+  // 2. Saring item galeri
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  
+  galleryItems.forEach(item => {
+    if (category === 'all') {
+      item.classList.remove('hide');
+    } else {
+      if (item.classList.contains(category)) {
+        item.classList.remove('hide');
+      } else {
+        item.classList.add('hide');
+      }
+    }
+  });
+}
+
+// Daftarkan fungsi ke objek window agar bisa diakses secara global oleh atribut onclick HTML
+window.filterGallery = filterGallery;
+
 /* ===== HERO PARALLAX EFFECT ===== */
 window.addEventListener("scroll", function() {
   var img = document.querySelector(".hero-bg img");
