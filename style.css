@@ -849,7 +849,8 @@ gap:.9rem;
   margin-bottom: 1rem;
 }
 
-.visi-card p {
+.visi-card p,
+.misi-card p {
   color: rgba(212,197,178,0.85);
   font-size: 0.95rem;
 }
@@ -875,12 +876,6 @@ gap:.9rem;
   line-height: 1;
   flex-shrink: 0;
   min-width: 2rem;
-}
-
-.misi-list li > span:last-child {
-  color: rgba(212,197,178,0.85);
-  font-size: 0.95rem;
-  line-height: 1.5;
 }
 
 /* ===== PENDAFTARAN STEPS ===== */
