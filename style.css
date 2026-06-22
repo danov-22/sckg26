@@ -517,44 +517,54 @@ gap:.9rem;
 }
 
 /* ===== Mobile ===== */
-@media (max-width:767px){
+@media (max-width: 767px){
 
-.hero-content{
+  .hero-content {
+    background: rgba(22,138,109,.76);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    width: min(90%, 600px);    
+    border-radius: 18px;
+    
+    /* Safely nudges the card down on mobile while keeping it clean */
+    padding: 2.5rem 1.5rem !important;
+    margin-top: 60px; 
+  }
 
-    background:rgba(22,138,109,.76);
-
-    backdrop-filter:blur(24px);
-
-    width:min(90%,600px);    
-
-    -webkit-backdrop-filter:blur(24px);
-
-    border-radius:18px;
-
-    padding: 2rem 3rem !important;
-
-}
-
-.hero-bg {
+  .hero-bg {
     position: absolute;
     inset: 0;
     overflow: hidden;
     z-index: 0;
-}
+  }
 
-.hero-bg img {
-    width:100%;
-    height:115%;
-    object-fit:cover;
-    object-position:52% 20%;
+  .hero-bg img {
+    width: 100%;
+    height: 115%;
+    object-fit: cover;
+    object-position: 52% 20%;
     will-change: transform;
-}
-.hero-actions{
+  }
 
-    flex-direction:column;
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch; 
+  }
 
-}
+  .hero-actions .btn { 
+    text-align: center; 
+  }
 
+  /* Global Layout Scale for Mobile Screens */
+  .section { padding: 48px 0; }
+  .container { padding: 0 1rem; }
+
+  /* Typography Scale for Mobile Screens */
+  h1, .hero-title { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.15rem; }
+  .hero-eyebrow { font-size: 0.7rem; }
+  .hero-subtitle { font-size: 0.95rem; }
 }
 
 /* ===== PAGE HERO (NON-HOME PAGES) ===== */
@@ -1436,34 +1446,6 @@ gap:.9rem;
     border-radius: 8px;
   }
 }
-
-/* --- Mobile (≤ 600px) --- */
-@media (max-width: 600px) {
-  .section { padding: 48px 0; }
-  .container { padding: 0 1rem; }
-
-  /* Typography */
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.15rem; }
-
-  /* Hero */
-  .hero {
-    min-height: 85vh;
-    align-items: flex-end;
-  }
-  .hero-content {
-    padding: 80px 1rem 3rem;
-    background: #1A9B7A; 
-  }
-  .hero-eyebrow { font-size: 0.7rem; }
-  .hero-title   { font-size: 2rem; }
-  .hero-subtitle { font-size: 0.95rem; }
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .hero-actions .btn { text-align: center; }
 
   /* Page hero */
   .page-hero { min-height: 220px; }
