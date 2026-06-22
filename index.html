@@ -38,7 +38,10 @@
 
       <!-- Background Image -->
       <div class="hero-bg">
-        <img src="images/sckg-bg.JPG" alt="SCKG Background" class="sckg-bg" />
+        <picture>
+            <source media="(min-width:768px)" srcset="images/sckg-bg.JPG">
+            <img src="images/sckg-bg.JPG" alt="SCKG Study Center">
+        </picture>
         <div class="hero-overlay"></div>
       </div>
 
@@ -58,7 +61,7 @@
             Selengkapnya
           </button>
           <button class="btn btn-outline-white" onclick="showPage('login')">
-            Login SC
+            Login Dashboard SC
           </button>
         </div>
       </div>
