@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Galeri | Study Center</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+ 
+<body>
+ <!-- ===== GALERI PAGE ===== -->
+<section class="gallery-page">
+
+    <div class="page-hero">
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="section-tag tag-light">Dokumentasi</span>
+        <h1>Galeri Kegiatan<br />Study Center</h1>
+        <p>Melihat kembali momen belajar, pembinaan dan aktivitas lainnya.</p>
+      </div>
+    </div>
+
+    <section class="section bg-cream">
+      <div class="container">
+        
+        <div class="gallery-filters">
+          <button class="filter-btn active" onclick="filterGallery('all', this)">Semua Momen</button>
+          <button class="filter-btn" onclick="filterGallery('ekskul', this)">Ekstrakurikuler</button>          
+          <button class="filter-btn" onclick="filterGallery('akademik', this)">Kelas Akademik</button>
+          <button class="filter-btn" onclick="filterGallery('pembinaan', this)">Pembinaan</button>
+        </div>
+
+        <div class="gallery-grid">
+
+<!-- ===== ALL EKSKUL ===== -->         
+          <div class="gallery-item ekskul">
+            <div class="gallery-card">
+              <img src="images/kelas-gitar.JPG" alt="Kelas Gitar" class="zoomable-img" onclick="zoomImage(this)">
+              <div class="gallery-info">
+                <span class="gallery-tag">Ekskul</span>
+                <h4>Harmoni Kelas Musik</h4>
+                <p>Latihan teknik chord dasar untuk performa akhir semester.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item ekskul">
+            <div class="gallery-card">
+              <img src="images/english_intermediate.JPG" alt="Kelas Inggris" class="zoomable-img" onclick="zoomImage(this)">
+              <div class="gallery-info">
+                <span class="gallery-tag">Ekskul</span>
+                <h4>Bahasa Inggris</h4>
+                <p>Membangun lingkungan yang mendukung untuk lebih berani berbicara.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item ekskul">
+            <div class="gallery-card">
+              <img src="images/coding.jpg" alt="Kelas Coding SCKG" class="zoomable-img" onclick="zoomImage(this)">
+              <div class="gallery-info">
+                <span class="gallery-tag">Ekskul</span>
+                <h4>Belajar Pemrograman Dasar</h4>
+                <p>Siswa belajar memecahkan logika kode pertama mereka.</p>
+              </div>
+            </div>
+          </div>
+
+<!-- ===== ALL KELAS WAJIB ===== -->
+          <div class="gallery-item akademik">
+            <div class="gallery-card">
+              <img src="images/kelas-SMA.JPG" alt="Kelas Matematika SMA" class="zoomable-img" onclick="zoomImage(this)">
+              <div class="gallery-info">
+                <span class="gallery-tag">Akademik</span>
+                <h4>Kelas Matematika SMA</h4>
+                <p>Suasana belajar kelompok yang fokus namun tetap menyenangkan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item akademik">
+            <div class="gallery-card">
+              <img src="images/mtk.JPG" alt="Kelas Matematika SMA" class="zoomable-img" onclick="zoomImage(this)">
+              <div class="gallery-info">
+                <span class="gallery-tag">Akademik</span>
+                <h4>Kelas Matematika SMP</h4>
+              </div>
+            </div>
+          </div>
+
+<!-- ===== ALL PEMBINAAN =====-->           
+          <div class="gallery-item pembinaan">
+            <div class="gallery-card">
+              <img src="images/pembinaan.JPEG" alt="Sesi Pembinaan Rohani" class="zoomable-img" onclick="zoomImage(this)">
+              <div class="gallery-info">
+                <span class="gallery-tag">Pembinaan</span>
+                <h4>Sesi Pembinaan Rohani</h4>
+                <p>Membentuk pribadi yang taat kepada Tuhan dan berdampak positif bagi orang sekitar.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item pembinaan">
+            <div class="gallery-card">
+              <img src="images/topik_belajar_jepang.jpeg" alt="Topik Khusus" class="zoomable-img" onclick="zoomImage(this)">
+              <div class="gallery-info">
+                <span class="gallery-tag">Pembinaan</span>
+                <h4>Sesi Pembicara Khusus</h4>
+                <p>Berbagi ilmu dan pengalaman berharga dari pembicara yang kompeten.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item pembinaan">
+            <div class="gallery-card">
+              <video autoplay loop muted playsinline class="gallery-video" onclick="zoomVideo(this, event)">
+                <source src="images/seminar_gigi.mp4" type="video/mp4">
+              </video>
+              <div class="gallery-info">
+                <span class="gallery-tag">Seminar</span>
+                <h4>Kesehatan Gigi</h4>
+                <p>Mengadakan seminar dengan topik yang berbeda-beda tiap semester.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pembinaan-menu" id="pembinaanMenu">
+
+          <div class="pembinaan-card" onclick="openPembinaan('kerohanian')">
+            <img src="images/pembinaan.JPEG" alt="Pembinaan Kerohanian">
+            <span>Kerohanian</span>
+          </div>
+
+          <div class="pembinaan-card" onclick="openPembinaan('topik')">
+            <img src="images/topik_belajar_jepang.jpeg" alt="Topik Khusus">
+            <span>Topik Khusus</span>
+          </div>
+
+          <div class="pembinaan-card" onclick="openPembinaan('games')">
+            <img src="images/games.jpg" alt="Pembinaan Games">
+            <span>Sesi Games</span>
+          </div>
+
+          <div class="pembinaan-card" onclick="openPembinaan('seminar')">
+            <video aria-label="Seminar Tematik" muted autoplay loop playsinline>
+              <source src="images/seminar_gigi.mp4" type="video/mp4">
+            </video>
+            <span>Seminar</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+<!-- ===== PEMBINAAN MODAL ===== -->    
+
+        <div class="pembinaan-modal" id="pembinaanModal">
+
+          <button class="close-btn" onclick="closePembinaan()">
+            ×
+          </button>
+
+          <button class="nav prev" onclick="changeSlide(-1)">
+            ❮
+          </button>
+
+          <div id="slideContainer"></div>
+
+          <button class="nav next" onclick="changeSlide(1)">
+            ❯
+          </button>
+
+        </div>
+
+
+    <section class="section bg-dark">
+      <div class="container text-center">
+        <div class="cta-box">
+          <h2 class="light">Tertarik untuk bergabung?</h2>
+          <p class="light" style="opacity: 0.85; margin-bottom: 2rem;">Pendaftaran siswa baru selalu terbuka bagi yang sungguh-sungguh ingin berkembang.</p>
+          <a href="index.html" class="btn btn-primary btn-lg">Cara Mendaftar</a>
+        </div>
+      </div>
+    </section>
+
+  </section>
+   <!-- END GALERI -->
+
+<script src="js/gallery.js"></script>   
+
+</body>
+</html>

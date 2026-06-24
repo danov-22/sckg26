@@ -105,62 +105,6 @@ document.addEventListener('click', function(e) {
   showPage('home');
 });
 
-/* ===== LIGHTBOX GALlERY (ZOOM IMAGE & VIDEO) ===== */
-
-function zoomImage(element) {
-    const lightbox = document.getElementById('imageLightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxVid = document.getElementById('lightboxVid');
-
-    if (lightboxVid) lightboxVid.style.display = 'none';
-    if (lightboxImg) lightboxImg.style.display = 'block';
-
-    lightboxImg.src = element.src;
-    lightboxImg.alt = element.alt;
-    lightbox.classList.add('show');
-}
-
-function zoomVideo(element) {
-    const lightbox = document.getElementById('imageLightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxVid = document.getElementById('lightboxVid');
-    
-    // Ambil link video dari tag <source> di dalamnya
-    const videoSource = element.querySelector('source').src;
-
-    // Sembunyikan gambar, TAMPILKAN video
-    if (lightboxImg) lightboxImg.style.display = 'none';
-    if (lightboxVid) lightboxVid.style.display = 'block';
-    
-    lightboxVid.src = videoSource;
-    lightboxVid.load();
-    lightboxVid.play(); 
-
-    lightbox.classList.add('show');
-}
-
-function closeZoom() {
-    const lightbox = document.getElementById('imageLightbox');
-    const lightboxVid = document.getElementById('lightboxVid');
-    
-    lightbox.classList.remove('show');
-    
-    if (lightboxVid) {
-        lightboxVid.pause();
-        lightboxVid.src = ""; 
-    }
-}
-
-/* ===== HERO PARALLAX EFFECT ===== */
-window.addEventListener("scroll", function() {
-  var img = document.querySelector(".hero-bg img");
-  if (!img) return;
-
-  var offset = window.innerWidth <= 767 ? -120 : 0;
-  img.style.transform =
-    `translateY(${offset + window.scrollY * 0.12}px)`;
-});
-
 
 /* ===== FLOATING DRAGGABLE WHATSAPP BUTTON LOGIC ====+ */
 

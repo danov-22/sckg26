@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -27,7 +27,7 @@
         <li><a href="#" class="nav-link active" data-page="home" onclick="showPage('home'); return false;">Beranda</a></li>
         <li><a href="#" class="nav-link" data-page="about" onclick="showPage('about'); return false;">Tentang</a></li>
         <li><a href="#" class="nav-link" data-page="kelas" onclick="showPage('kelas'); return false;">Kelas</a></li>
-        <li><a href="#" class="nav-link" data-page="galeri" onclick="showPage('galeri'); return false;">Galeri</a></li>
+        <li><a href="gallery.html" class="nav-link">Galeri</a></li>
         <li><a href="#" class="nav-link" data-page="faq" onclick="showPage('faq'); return false;">FAQ</a></li>
         <li><a href="https://sc.kantindigital.com/" class="nav-link btn-nav-login" target="_blank" rel="noopener noreferrer">Login Dashboard SCKG</a></li>
       </ul>
@@ -50,11 +50,11 @@
         <div class="hero-content">
           <p class="hero-eyebrow">Second Home for a Better Future</p>
           <h1 class="hero-title">
-            Satu Ruang Belajar,<br>
-            Sama Kesempatannya
+            Ruang Belajar,<br>
+            Ruang Berkembang
           </h1>
           <p class="hero-subtitle">
-            Pintu kami terbuka lebar bagi setiap siswa yang siap berjuang bagi masa depan yang lebih baik.
+            Terbuka bagi setiap siswa yang siap berjuang bagi masa depan yang lebih baik.
           </p>
 
           <div class="hero-actions">
@@ -161,6 +161,7 @@
             <p class="kelas-desc">Kembangkan bakat dan keterampilan di luar akademik untuk masa depan yang lebih luas.</p>
             <button class="btn btn-sm btn-outline-dark" onclick="showPage('kelas')">Lihat Detail</button>
           </div>
+
           <div class="kelas-card kelas-wajib">
             <div class="kelas-badge badge-wajib">Wajib</div>
             <h3>Mata Pelajaran Wajib</h3>
@@ -168,6 +169,15 @@
             <p class="kelas-desc">Kuasai fondasi akademik yang kuat agar bisa bersaing dan berprestasi di sekolah.</p>
             <button class="btn btn-sm btn-outline-dark" onclick="showPage('kelas')">Lihat Detail</button>
           </div>
+
+          <div class="kelas-card">
+            <div class="kelas-badge badge-galeri">Dokumentasi SCKG</div>
+            <h3>Momen Belajar Bersama</h3>
+            <p class="kelas-subjects">Kelas Ekskul &nbsp;&bull;&nbsp; Kelas Wajib &nbsp;&bull;&nbsp; Pembinaan &nbsp;&bull;&nbsp; Seminar</p>
+            <p class="kelas-desc">Lihat berbagai kegiatan belajar, pembinaan dan seminar yang ada di SCKG.</p>
+            <a href="gallery.html" class="btn btn-sm btn-outline-dark">Lihat Galeri</a>       
+          </div>
+
         </div>
       </div>
     </section>
@@ -178,14 +188,13 @@
         <div class="cta-box">
           <h2>Sudah Terdaftar di SCKG?</h2>
           <p>Akses dashboard untuk absensi, jurnal, dan informasi kelas kamu.</p>
-          <button class="btn btn-primary btn-lg" onclick="showPage('login')">Masuk ke Dashboard SCKG</button>
+          <button href="https://sc.kantindigital.com/" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Masuk ke Dashboard SCKG</button>         
         </div>
       </div>
     </section>
 
     </section>
   <!-- END HOME -->
-
 
   <!-- ===== ABOUT PAGE ===== -->
   <section class="page" id="page-about">
@@ -311,7 +320,6 @@
   </section>
   <!-- END ABOUT -->
 
-
   <!-- ===== KELAS PAGE ===== -->
   <section class="page" id="page-kelas">
 
@@ -398,7 +406,6 @@
           <p class="section-desc light">Penguatan akademik di mata pelajaran kunci agar siswa percaya diri menghadapi ujian.</p>
         </div>
         <div class="wajib-grid">
-
           <div class="wajib-card">
             <div class="wajib-header">
               <div class="wajib-icon">&#128208;</div>
@@ -425,9 +432,9 @@
             </div>
           </div>
 
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     <!-- Syarat -->
     <section class="section bg-cream">
@@ -466,7 +473,7 @@
         <div class="cta-box">
           <h2>Tertarik Bergabung?</h2>
           <p>Daftarkan dirimu dan mulailah perjalanan belajarmu bersama SCKG!</p>
-          <button class="btn btn-primary btn-lg" onclick="showPage('about'); setTimeout(() => { document.getElementById('pendaftaran').scrollIntoView({behavior:'smooth'}); }, 100);">Cara Mendaftar</button>
+          <a href="index.html#pendaftaran" class="btn btn-primary btn-lg">Cara Mendaftar</a>
         </div>
       </div>
     </section>
@@ -477,137 +484,6 @@
     
   </section>
   <!-- END KELAS -->
-
-
- <!-- ===== GALERI PAGE ===== -->
-<section class="page" id="page-galeri">
-
-    <div class="page-hero">
-      <div class="page-hero-overlay"></div>
-      <div class="page-hero-content">
-        <span class="section-tag tag-light">Dokumentasi</span>
-        <h1>Galeri Kegiatan<br />Study Center</h1>
-        <p>Melihat kembali momen belajar, pembinaan dan aktivitas lainnya.</p>
-      </div>
-    </div>
-
-    <section class="section bg-cream">
-      <div class="container">
-        
-        <div class="gallery-filters">
-          <button class="filter-btn active" onclick="filterGallery('all')">Semua Momen</button>
-          <button class="filter-btn" onclick="filterGallery('ekskul')">Ekstrakurikuler</button>          
-          <button class="filter-btn" onclick="filterGallery('akademik')">Kelas Akademik</button>
-          <button class="filter-btn" onclick="filterGallery('pembinaan')">Pembinaan</button>
-        </div>
-
-        <div class="gallery-grid">
-
-          <div class="gallery-item ekskul">
-            <div class="gallery-card">
-              <img src="images/kelas-gitar.JPG" alt="Kelas Gitar" class="zoomable-img" onclick="zoomImage(this)">
-              <div class="gallery-info">
-                <span class="gallery-tag">Ekskul</span>
-                <h4>Harmoni Kelas Musik</h4>
-                <p>Latihan teknik chord dasar untuk performa akhir semester.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item ekskul">
-            <div class="gallery-card">
-              <img src="images/english_intermediate.JPG" alt="Kelas Inggris" class="zoomable-img" onclick="zoomImage(this)">
-              <div class="gallery-info">
-                <span class="gallery-tag">Ekskul</span>
-                <h4>Bahasa Inggris</h4>
-                <p>Membangun lingkungan yang mendukung untuk lebih berani berbicara.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item ekskul">
-            <div class="gallery-card">
-              <img src="images/coding.jpg" alt="Kelas Coding SCKG" class="zoomable-img" onclick="zoomImage(this)">
-              <div class="gallery-info">
-                <span class="gallery-tag">Ekskul</span>
-                <h4>Belajar Pemrograman Dasar</h4>
-                <p>Siswa belajar memecahkan logika kode pertama mereka.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item akademik">
-            <div class="gallery-card">
-              <img src="images/kelas-SMA.JPG" alt="Kelas Matematika SMA" class="zoomable-img" onclick="zoomImage(this)">
-              <div class="gallery-info">
-                <span class="gallery-tag">Akademik</span>
-                <h4>Kelas Matematika SMA</h4>
-                <p>Suasana belajar kelompok yang fokus namun tetap menyenangkan.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item akademik">
-            <div class="gallery-card">
-              <img src="images/mtk.JPG" alt="Kelas Matematika SMA" class="zoomable-img" onclick="zoomImage(this)">
-              <div class="gallery-info">
-                <span class="gallery-tag">Akademik</span>
-                <h4>Kelas Matematika SMP</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item pembinaan">
-            <div class="gallery-card">
-              <img src="images/pembinaan.JPEG" alt="Sesi Pembinaan Rohani" class="zoomable-img" onclick="zoomImage(this)">
-              <div class="gallery-info">
-                <span class="gallery-tag">Pembinaan</span>
-                <h4>Sesi Pembinaan Rohani</h4>
-                <p>Membentuk pribadi yang taat kepada Tuhan dan berdampak positif bagi orang sekitar.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item pembinaan">
-            <div class="gallery-card">
-              <img src="images/topik_belajar_jepang.jpeg" alt="Sesi Pembicara Khusus" class="zoomable-img" onclick="zoomImage(this)">
-              <div class="gallery-info">
-                <span class="gallery-tag">Pembinaan</span>
-                <h4>Sesi Pembicara Khusus</h4>
-                <p>Berbagi ilmu dan pengalaman berharga dari pembicara yang kompeten.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item pembinaan">
-            <div class="gallery-card">
-              <video autoplay loop muted playsinline class="gallery-video" onclick="zoomVideo(this); event.stopPropagation();">
-                <source src="images/seminar_gigi.mp4" type="video/mp4">
-              </video>
-              <div class="gallery-info">
-                <span class="gallery-tag">Seminar</span>
-                <h4>Kesehatan Gigi</h4>
-                <p>Mengadakan seminar dengan topik yang berbeda-beda tiap semester.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section bg-dark">
-      <div class="container text-center">
-        <div class="cta-box">
-          <h2 class="light">Tertarik untuk bergabung?</h2>
-          <p class="light" style="opacity: 0.85; margin-bottom: 2rem;">Pendaftaran siswa baru selalu terbuka bagi yang sungguh-sungguh ingin berkembang.</p>
-          <button class="btn btn-primary btn-lg" onclick="showPage('about'); setTimeout(() => { document.getElementById('pendaftaran').scrollIntoView({behavior:'smooth'}); }, 100);">Cara Mendaftar</button>
-        </div>
-      </div>
-    </section>
-
-  </section>
-   <!-- END GALERI -->
 
   <!-- ===== FAQ PAGE ===== -->
   <section class="page" id="page-faq">
@@ -739,33 +615,34 @@
   </section>
   <!-- END FAQ -->
 
-
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
       <div class="footer-grid">
+
         <div class="footer-brand">
           <img src="images/logo-sc.png" alt="SCKG Study Center" class="footer-logo" />
           <p>Study Center Kelapa Gading — <br> Rumah kedua untuk masa depan <br> yang lebih baik.</p>
         </div>
+
         <div class="footer-col">
           <h4>Navigasi</h4>
           <ul>
             <li><a href="#" onclick="showPage('home'); return false;">Beranda</a></li>
             <li><a href="#" onclick="showPage('about'); return false;">Tentang</a></li>
             <li><a href="#" onclick="showPage('kelas'); return false;">Kelas</a></li>
-            <li><a href="#" onclick="showPage('faq'); return false;">FAQ</a></li>
-            <li><a href="#" onclick="showPage('login'); return false;">Login SC</a></li>
-            <li><a href="#" onclick="window.open('https://sc.kantindigital.com/', '_blank'); return false;">Dashboard SCKG</a></li>
+            <li><a href="gallery.html">Galeri</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
           <h4>Program</h4>
           <ul>
             <li><a href="#" onclick="showPage('kelas'); return false;">Ekskul</a></li>
-            <li><a href="#" onclick="showPage('kelas'); return false;">Kelas Wajib — MTK</a></li>
+            <li><a href="#" onclick="showPage('kelas'); return false;">Kelas Wajib</a></li>
+            <li><a href="#" onclick="window.open('https://sc.kantindigital.com/', '_blank'); return false;">Dashboard</a></li>            
           </ul>
         </div>
+
         <div class="footer-col">
           <h4>Info</h4>
           <ul>
@@ -774,11 +651,13 @@
             <li><a href="#" onclick="showPage('faq'); return false;">FAQ</a></li>
           </ul>
         </div>
-      </div>
+
       <div class="footer-bottom">
-        <p>&copy; 2026 Study Center Kelapa Gading &mdash; <em>Second Home for the Better Future</em></p>
+        <p>&copy; 2026 Study Center Kelapa Gading &mdash; <br> 
+          <em>Hak cipta dilindungi undang-undang</em></p>
       </div>
-    </div>
+
+    </div>  
   </footer>
 
 <!-- Floating WhatsApp Button -->
@@ -795,6 +674,6 @@
     <video class="lightbox-video" id="lightboxVid" controls autoplay loop muted style="display: none;"></video>
   </div> 
 
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
