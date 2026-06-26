@@ -1,6 +1,194 @@
 /* ===== GALLERY PAGE STYLES ===== */
 
-/* Filter Buttons */
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled .logo-text {
+  color: #1A9B7A;
+}
+
+.navbar.scrolled {
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 68px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: rgba(250, 247, 242, 0.92);
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.nav-link {
+  padding: 0.85rem 1rem;
+  color: #FAF7F2;
+  display: block;
+  text-align: left;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.navbar.scrolled .nav-link{
+  color: #1A9B7A;
+}
+
+/* Other pages */
+.navbar.page-navbar {
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(10px);
+}
+
+.navbar.page-navbar .logo-text {
+    color: #1A9B7A;
+}
+
+.navbar.page-navbar .nav-link {
+    color: #1A9B7A;
+}
+
+.navbar.page-navbar .hamburger span {
+    background: #1A9B7A;
+}
+
+@media (max-width:767px) {
+
+    .navbar.scrolled .nav-link {
+        color: #FAF7F2;
+    }
+
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #FAF7F2;
+  background: rgba(255,255,255,0.12);
+}
+
+.btn-nav-login {
+  background: #1A9B7A;
+  color: #FAF7F2 !important;
+  border: 2px solid rgba(255,255,255,0.35);
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  transition: all 0.25s ease;
+}
+
+.btn-nav-login:hover {
+  background: #17876A;
+  transform: translateY(-1px);
+  color: #FAF7F2 !important;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #FAF7F2;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.navbar.scrolled .hamburger span {
+  background: #1A9B7A;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width:768px){
+
+  .hamburger{
+    display:flex; 
+  }
+
+  .nav-links{
+    position:fixed;
+    top:68px;
+    left:0;
+    right:0;
+    background:#1A9B7A;
+    flex-direction:column;
+    align-items:stretch;
+    padding:0.75rem 1rem 1rem;
+    gap:0.2rem;
+    transform:translateY(-110%);
+    opacity:0;
+    pointer-events:none;
+    transition:transform .3s ease, opacity .3s ease;
+    box-shadow:0 8px 28px rgba(0,0,0,.28);
+    z-index:999;
+  }
+
+  .nav-links.open{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:all;
+  }
+
+    .navbar.page-navbar .nav-link{
+    color:#FAF7F2;
+  }
+
+}
+
+/* ===== Filter Buttons ===== */
 .gallery-filters {
   display: flex;
   justify-content: center;
@@ -118,15 +306,25 @@
   transform: scale(1.04);
 }
 
+.gallery-modal{
+    display:none;
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+.gallery-modal.show{
+    display:flex;
+}
+
 /* Filter Hide/Show Animation Helper */
-.gallery-item {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.gallery-item.hide {
-  display: none;
-}
-
 .zoomable-img { 
   cursor: zoom-in; transition: transform 0.2s ease; 
 }
@@ -224,6 +422,11 @@
   font-weight: 600;
   font-size: 1.1rem;
   text-shadow: 0 2px 8px black;
+}
+
+.pembinaan-intro{
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
 }
 
 .pembinaan-modal {

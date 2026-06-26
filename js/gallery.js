@@ -6,11 +6,18 @@ function zoomImage(element) {
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxVid = document.getElementById('lightboxVid');
 
-    if (lightboxVid) lightboxVid.style.display = 'none';
-    if (lightboxImg) lightboxImg.style.display = 'block';
+    if (!lightbox || !lightboxImg) return;
 
+    if (lightboxVid) {
+        lightboxVid.style.display = 'none';
+        lightboxVid.pause();
+        lightboxVid.src = "";
+    }
+
+    lightboxImg.style.display = 'block';
     lightboxImg.src = element.src;
     lightboxImg.alt = element.alt;
+
     lightbox.classList.add('show');
 }
 
@@ -18,17 +25,20 @@ function zoomVideo(element) {
     const lightbox = document.getElementById('imageLightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxVid = document.getElementById('lightboxVid');
-    
-    // Ambil link video dari tag <source> di dalamnya
-    const videoSource = element.querySelector('source').src;
 
-    // Sembunyikan gambar, TAMPILKAN video
-    if (lightboxImg) lightboxImg.style.display = 'none';
-    if (lightboxVid) lightboxVid.style.display = 'block';
-    
-    lightboxVid.src = videoSource;
+    if (!lightbox || !lightboxVid) return;
+
+    const source = element.querySelector('source');
+    if (!source) return;
+
+    if (lightboxImg) {
+        lightboxImg.style.display = 'none';
+    }
+
+    lightboxVid.style.display = 'block';
+    lightboxVid.src = source.src;
     lightboxVid.load();
-    lightboxVid.play(); 
+    lightboxVid.play();
 
     lightbox.classList.add('show');
 }
@@ -36,70 +46,128 @@ function zoomVideo(element) {
 function closeZoom() {
     const lightbox = document.getElementById('imageLightbox');
     const lightboxVid = document.getElementById('lightboxVid');
-    
+
+    if (!lightbox) return;
+
     lightbox.classList.remove('show');
-    
+
     if (lightboxVid) {
         lightboxVid.pause();
-        lightboxVid.src = ""; 
+        lightboxVid.src = "";
     }
 }
 
 /* ===== GALLERY DATA ===== */
 
-const pembinaanGallery = {
+const galleryData = {
 
-kerohanian: [
-"images/pembinaan.JPEG",
-"images/kerohanian2.JPG"
-],
+    ekskul: {
 
-topik: [
-"images/topik_belajar_jepang.jpeg",
-"images/topik2.JPG"
-],
+        gitar: [
+        "images/kelas-gitar.JPG",
+        "images/pameran-gitar.jpg"
+        ],
 
-games: [
-"images/games.jpg",
-"images/games2.jpg"
-],
+        inggris: [
+        "images/english_intermediate.JPG",
+        "images/english-basic.JPG"
+        ],
 
-seminar: [
-"images/seminar_gigi.mp4",
-"images/seminar2.mp4"
-]
+        coding: [
+        "images/coding.jpg"
+        ]
+
+    },
+
+    akademik: {
+
+        smp: [
+        "images/mtk.JPG"
+        ],
+
+        sma: [
+        "images/kelas-SMA.JPG"
+        ]
+
+    },
+
+    pembinaan: {
+
+        kerohanian: [
+        "images/singing.mp4",
+        "images/pembinaan.JPEG"
+        ],
+
+        topik: [
+        "images/self-acceptance.mp4",
+        "images/jatidiri.mp4",
+        "images/public-speaking.mp4",
+        "images/topik_belajar_jepang.jpeg"
+        ],
+
+        games: [
+        "images/recapgames.mp4"
+        ],
+
+        seminar: [
+        "images/brain-food-101.mp4",
+        "images/seminar_gigi.mp4"
+        ]
+
+    },
+
+    lainnya: {
+        
+        outing: [
+        "images/LAI-2024.mp4",
+        "images/LAI-2024.jpg",
+        "images/art-museum.jpg"
+        ]
+
+    }
 
 };
 
+let currentSection = "";
+let currentCategory = "";
 
-let currentCategory = [];
+let currentGallery = [];
 let currentIndex = 0;
 
+function openGallery(section, category){
 
-function openPembinaan(category){
+    if (!galleryData[section] || !galleryData[section][category]) {
+        console.error("Gallery not found:", section, category);
+        return;
+    }
 
-currentCategory = pembinaanGallery[category];
+    currentSection = section;
+    currentCategory = category;
+    
+    currentGallery = galleryData[section][category];
 
-currentIndex = 0;
+    currentIndex = 0;
 
-document
-.getElementById("pembinaanModal")
-.classList.add("show");
+    document
+        .getElementById("galleryModal")
+        .classList.add("show");
 
-showSlide();
+    showSlide();
 
 }
 
 
 function showSlide(){
 
-let file = currentCategory[currentIndex];
+if (!currentGallery || currentGallery.length === 0) return; 
+
+let file = currentGallery[currentIndex];
 
 let container =
 document.getElementById("slideContainer");
 
 
-if(file.endsWith(".mp4")){
+if(file.toLowerCase().endsWith(".mp4")){
 
 container.innerHTML = `
 <video controls autoplay>
@@ -126,10 +194,10 @@ currentIndex += direction;
 
 
 if(currentIndex < 0)
-currentIndex = currentCategory.length - 1;
+currentIndex = currentGallery.length - 1;
 
 
-if(currentIndex >= currentCategory.length)
+if(currentIndex >= currentGallery.length)
 currentIndex = 0;
 
 
@@ -138,12 +206,24 @@ showSlide();
 }
 
 
-function closePembinaan(){
+function closeGallery(){
 
-document
-.getElementById("pembinaanModal")
-.classList.remove("show");
+const modal = document.getElementById("galleryModal");
+const container = document.getElementById("slideContainer");
 
+modal.classList.remove("show");
+container.innerHTML = "";
+
+}
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
 }
 
 /* ===== HERO PARALLAX EFFECT ===== */
@@ -183,9 +263,12 @@ function filterGallery(category, button) {
 
   });
 
-  if (category === "pembinaan") {
-    menu.classList.add("show");
-  } else {
-    menu.classList.remove("show");
+  if (menu) {
+    if (category === "pembinaan") {
+        menu.classList.add("show");
+    } else {
+        menu.classList.remove("show");
+    }
   }
+
 }

@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/gallery.css">
+
 </head>
 <body>
 
@@ -50,11 +52,11 @@
         <div class="hero-content">
           <p class="hero-eyebrow">Second Home for a Better Future</p>
           <h1 class="hero-title">
-            Ruang Belajar,<br>
+            Ruang Belajar &<br>
             Ruang Berkembang
           </h1>
           <p class="hero-subtitle">
-            Terbuka bagi setiap siswa yang siap berjuang bagi masa depan yang lebih baik.
+            Terbuka bagi setiap siswa yang ingin berjuang bagi masa depan yang lebih baik.
           </p>
 
           <div class="hero-actions">
@@ -191,6 +193,135 @@
           <button href="https://sc.kantindigital.com/" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Masuk ke Dashboard SCKG</button>         
         </div>
       </div>
+    </section>
+
+      <!-- STUDY CENTER LOCATIONS -->
+    <section class="section bg-cream">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Lokasi</span>
+          <h2 class="section-title">📍 Lokasi Study Center Kelapa Gading</h2>
+          <p class="section-desc">Cari Study Center yang tersedia didekat mu.</p>
+        </div>
+
+      <div class="locations-grid">
+
+        <!-- SCJA -->
+        <div class="location-card">
+          <div class="location-top">
+            <h3>Study Center Janu Asri</h3>
+            <span class="status updating">
+              ● Sedang Diupdate
+            </span>
+          </div>
+
+          <p class="address">
+            📍 Janur Asri IX Blok QK18 No.23, <br> Kelapa Gading, Jakarta Utara</p>
+
+          <div class="map-container">
+            <iframe 
+              src="https://maps.google.com/maps?q=SCJA&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <a 
+            href="https://maps.app.goo.gl/MbCeJidEa2EU2d7w8"
+            target="_blank"
+            class="location-btn">
+            Dapatkan Petunjuk Arah
+          </a>
+        </div>
+
+        <!-- SC Ink -->
+        <div class="location-card">
+          <div class="location-top">
+            <h3>Study Center Inkopal</h3>
+            <span class="status active">
+              ● Buka
+            </span>
+          </div>
+
+          <p class="address">
+            📍 Ruko Inkopal Blok G 11-12-15, <br> Kelapa Gading, Jakarta Utara</p>
+
+          <div class="map-container">
+            <iframe 
+              src="https://maps.google.com/maps?q=SCInk&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <a 
+            href="https://maps.app.goo.gl/CM5h7nbYqoe8W9n19"
+            target="_blank"
+            class="location-btn">
+            Dapatkan Petunjuk Arah
+          </a>
+        </div>
+
+        <!-- SCJGC -->
+        <div class="location-card">
+          <div class="location-top">
+            <h3>Study Center <br> Jakarta Garden City</h3>
+            <span class="status updating">
+              ● Sedang Diupdate
+            </span>
+          </div>
+
+          <p class="address">
+            📍 Detail alamat akan segera tersedia.
+          </p>
+
+          <div class="map-container pending-map">
+            Informasi peta akan segera tersedia. 
+          </div>
+
+          <button class="location-btn disabled">
+            Segera Hadir Kembali
+          </button>
+        </div>
+
+
+        <!-- MAIN BRANCH -->
+        <div class="location-card main-branch">
+
+          <div class="main-label">
+            Asal Usul SC
+          </div>
+
+          <div class="location-top">
+            <h3>Study Center Gunung Sahari</h3>
+            <span class="status active">
+              ● Cabang Utama
+            </span>
+          </div>
+
+          <p class="address">
+            📍 Gunung Sahari IV No.6, RT.7/RW.7, <br> Kec. Kemayoran, Jakarta Pusat
+          </p>
+
+
+          <div class="map-container">
+            <iframe 
+              src="https://maps.google.com/maps?q=SCGS&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              loading="lazy">
+            </iframe>
+          </div>
+
+
+          <a 
+            href="https://maps.app.goo.gl/yiQVDiXrppAWjumc9"
+            target="_blank"
+            class="location-btn">
+            Kunjungi Cabang Utama 
+          </a>
+
+        </div>
+
+
+      </div>
+
     </section>
 
     </section>
@@ -409,9 +540,9 @@
           <div class="wajib-card">
             <div class="wajib-header">
               <div class="wajib-icon">&#128208;</div>
-              <span class="wajib-level">SMP</span>
+              <span class="wajib-level">WAJIB</span>
+              <h3>Matematika SMP</h3>
             </div>
-            <h3>Matematika SMP</h3>
             <p>Pembelajaran Matematika untuk siswa SMP kelas 7–9. Materi disesuaikan dengan kurikulum nasional dan kebutuhan ujian.</p>
             <div class="topic-tags">
               <span>Aljabar</span><span>Geometri</span><span>Bilangan</span>
@@ -422,9 +553,9 @@
           <div class="wajib-card">
             <div class="wajib-header">
               <div class="wajib-icon">&#128207;</div>
-              <span class="wajib-level wajib-level-sma">SMA</span>
+              <span class="wajib-level-sma">WAJIB</span>
+              <h3>Matematika SMA</h3>
             </div>
-            <h3>Matematika SMA</h3>
             <p>Pembelajaran Matematika untuk siswa SMA kelas 10–12. Fokus pada pemahaman konsep mendalam dan persiapan ujian nasional serta UTBK.</p>
             <div class="topic-tags">
               <span>Turunan</span><span>Integral</span><span>Trigonometri</span>
@@ -432,7 +563,6 @@
             </div>
           </div>
 
-          </div>
         </div>
       </section>
 
@@ -442,15 +572,14 @@
         <div class="section-header">
           <span class="section-tag">Syarat & Ketentuan</span>
           <h2 class="section-title">Membuka kelas</h2>
-          <p class="section-desc">Kelas Study Center dapat berlangsung dengan syarat adanya minimal lima siswa dalam satu kelas, baik untuk kelas ekskul maupun untuk kelas wajib.</p>
+          <p class="section-desc">Kelas Study Center dapat berlangsung dengan syarat adanya minimal lima siswa dalam satu kelas. Ini berlaku untuk semua kelas.</p>
         </div>
-        <div class="ekskul-grid">
-
-          <div class="ekskul-card">
-            <div class="ekskul-top">
-              <div class="ekskul-icon">&#128100;</div>
-              <div class="ekskul-tag-wrap">
-                <span class="badge-ekskul">Wajib</span>
+        <div class="syarat-grid">
+          <div class="syarat-card">
+            <div class="syarat-top">
+              <div class="syarat-icon">&#128100;</div>
+              <div class="syarat-tag-wrap">
+                <span class="badge-syarat">WAJIB</span>
                 <h3>Jumlah peserta</h3>
               </div>
             </div>
@@ -478,10 +607,11 @@
       </div>
     </section>
 
-      <div class="gallery-card">
-       <img src="images/mtk.JPG" alt="Kelas MTK SMA" class="zoomable-img" onclick="zoomImage(this)">     
+      <div class="cta-image-wrap">
+        <img
+          src="images/mtk.JPG" alt="MTK SMA" class="cta-image" onclick="zoomImage(this)"> 
       </div>
-    
+
   </section>
   <!-- END KELAS -->
 
@@ -621,7 +751,7 @@
 
         <div class="footer-brand">
           <img src="images/logo-sc.png" alt="SCKG Study Center" class="footer-logo" />
-          <p>Study Center Kelapa Gading — <br> Rumah kedua untuk masa depan <br> yang lebih baik.</p>
+          <p>Study Center Kelapa Gading — <br> Rumah kedua untuk masa depan yang lebih baik.</p>
         </div>
 
         <div class="footer-col">
@@ -654,7 +784,7 @@
 
       <div class="footer-bottom">
         <p>&copy; 2026 Study Center Kelapa Gading &mdash; <br> 
-          <em>Hak cipta dilindungi undang-undang</em></p>
+          <em>Hak cipta dilindungi undang-undang</em></p> <br>
       </div>
 
     </div>  
