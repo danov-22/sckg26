@@ -562,7 +562,7 @@ gap:.9rem;
     height: 115%;
     object-fit: cover;
     object-position: 52% 20%;
-    will-change: transform;
+    transform: translateY(-40px);
   }
 
   .hero-actions {
