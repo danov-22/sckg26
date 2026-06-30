@@ -191,4 +191,47 @@ if (dragElement) {
 
 }
 
+/* ==========================================================
+   HERO PARALLAX
+========================================================== */
 
+const heroImage = document.getElementById("heroImage");
+const heroSection = document.querySelector(".hero-section");
+
+if (heroImage && heroSection) {
+
+    let ticking = false;
+
+    function updateParallax() {
+
+        const rect = heroSection.getBoundingClientRect();
+
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+
+            const scroll = window.scrollY;
+
+            // Vertical movement
+            const yOffset = scroll * 0.15;
+
+            heroImage.style.transform =
+                `translateY(${yOffset}px)`;
+
+        }
+
+        ticking = false;
+
+    }
+
+    window.addEventListener("scroll", () => {
+
+        if (!ticking) {
+
+            requestAnimationFrame(updateParallax);
+
+            ticking = true;
+
+        }
+
+    }, { passive: true });
+
+}
