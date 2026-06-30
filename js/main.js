@@ -138,10 +138,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* ===== FLOATING WHATSAPP BUTTON ===== */
 
-
 function redirectToWhatsApp() {
 
-    const phoneNumber = "6281234567890"; 
+    const phoneNumber = "6281234567890";
+
     const message = encodeURIComponent(
         "Halo Study Center, saya ingin bertanya mengenai program ini."
     );
@@ -153,48 +153,95 @@ function redirectToWhatsApp() {
 
 }
 
-
 const dragElement = document.querySelector(".whatsapp-float");
-
-let isDragging = false;
-let startX;
-let startY;
-let initialX;
-let initialY;
-
 
 if (dragElement) {
 
-    // Desktop
+    let isDragging = false;
+    let hasMoved = false;
+
+    let startX = 0;
+    let startY = 0;
+
+    let initialX = 0;
+    let initialY = 0;
+
+    function getPoint(e) {
+        return e.touches ? e.touches[0] : e;
+    }
+
+    function startDrag(e) {
+
+        const point = getPoint(e);
+
+        isDragging = true;
+        hasMoved = false;
+
+        startX = point.clientX;
+        startY = point.clientY;
+
+        const rect = dragElement.getBoundingClientRect();
+
+        initialX = rect.left;
+        initialY = rect.top;
+
+        dragElement.style.left = initialX + "px";
+        dragElement.style.top = initialY + "px";
+        dragElement.style.right = "auto";
+        dragElement.style.bottom = "auto";
+
+    }
+
+    function drag(e) {
+
+        if (!isDragging) return;
+
+        e.preventDefault();
+
+        const point = getPoint(e);
+
+        const dx = point.clientX - startX;
+        const dy = point.clientY - startY;
+
+        if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
+            hasMoved = true;
+        }
+
+        dragElement.style.left = (initialX + dx) + "px";
+        dragElement.style.top = (initialY + dy) + "px";
+
+    }
+
+    function stopDrag() {
+
+        isDragging = false;
+
+    }
+
+    /* Desktop */
     dragElement.addEventListener("mousedown", startDrag);
     document.addEventListener("mousemove", drag);
     document.addEventListener("mouseup", stopDrag);
 
+    /* Mobile */
+    dragElement.addEventListener("touchstart", startDrag, { passive: false });
+    document.addEventListener("touchmove", drag, { passive: false });
+    document.addEventListener("touchend", stopDrag);
 
-    // Mobile
-    dragElement.addEventListener(
-        "touchstart",
-        startDrag,
-        { passive: false }
-    );
+    /* Click opens WhatsApp ONLY if user wasn't dragging */
+    dragElement.addEventListener("click", function () {
 
-    document.addEventListener(
-        "touchmove",
-        drag,
-        { passive: false }
-    );
+        if (!hasMoved) {
+            redirectToWhatsApp();
+        }
 
-    document.addEventListener(
-        "touchend",
-        stopDrag
-    );
+    });
 
 }
 
 /* ==========================================================
    HERO PARALLAX
 ========================================================== */
-
 const heroImage = document.getElementById("heroImage");
 const heroSection = document.querySelector(".hero-section");
 
@@ -208,26 +255,22 @@ if (heroImage && heroSection) {
 
         if (rect.bottom > 0 && rect.top < window.innerHeight) {
 
-            const scroll = window.scrollY;
+            const yOffset = -rect.top * 0.15;
 
-            // Vertical movement
-            const yOffset = scroll * 0.15;
-
-            heroImage.style.transform =
-                `translateY(${yOffset}px)`;
+            heroImage.style.transform = `translateY(${yOffset}px)`;
 
         }
 
         ticking = false;
-
     }
+
+    updateParallax();
 
     window.addEventListener("scroll", () => {
 
         if (!ticking) {
 
             requestAnimationFrame(updateParallax);
-
             ticking = true;
 
         }
