@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function redirectToWhatsApp() {
 
-    const phoneNumber = "6281234567890";
+    const phoneNumber = "6208991142400";
 
     const message = encodeURIComponent(
         "Halo Study Center, saya ingin bertanya mengenai program ini."
