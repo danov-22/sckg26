@@ -57,6 +57,22 @@ function closeZoom() {
     }
 }
 
+/* Close lightbox when clicking outside image/video */
+const imageLightbox = document.getElementById('imageLightbox');
+
+if (imageLightbox) {
+
+    imageLightbox.addEventListener('click', function(e) {
+
+        // only close when clicking the background
+        if (e.target === imageLightbox) {
+            closeZoom();
+        }
+
+    });
+
+}
+
 /* ===== GALLERY DATA ===== */
 
 const galleryData = {
@@ -121,9 +137,11 @@ const galleryData = {
         outing: [
         "images/LAI-2024.mp4",
         "images/LAI-2024.jpg",
+        ],
+
+        aktivitas: [
         "images/art-museum.jpg"
         ]
-
     }
 
 };
@@ -224,6 +242,20 @@ if (hamburger && navLinks) {
     hamburger.classList.toggle('open');
     navLinks.classList.toggle('open');
   });
+}
+
+const galleryModal = document.getElementById("galleryModal");
+
+if (galleryModal) {
+
+    galleryModal.addEventListener("click", function(e){
+
+        if(e.target === galleryModal){
+            closeGallery();
+        }
+
+    });
+
 }
 
 /* ===== HERO PARALLAX EFFECT ===== */
